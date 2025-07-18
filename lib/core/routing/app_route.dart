@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:products_app/core/routing/routes.dart';
-import 'package:products_app/features/splash/presentation/screens/splash_screen.dart';
+import 'package:products_app/features/splash/splash_screen.dart';
 import 'package:products_app/features/onBoard/presentation/screens/onboard_screen.dart';
 import 'package:products_app/features/home/presentation/screens/home_screen.dart';
 import 'package:products_app/features/details/presentation/screens/details_screen.dart';
@@ -15,7 +15,8 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
       case Routes.detailsScreen:
-        return MaterialPageRoute(builder: (_) => DetailsScreen());
+        final productId = settings.arguments as int;
+        return MaterialPageRoute(builder: (_) => DetailsScreen(productId: productId));
       default:
         return MaterialPageRoute(
           builder:
