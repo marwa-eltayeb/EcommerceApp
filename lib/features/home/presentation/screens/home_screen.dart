@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         builder: (context, state) {
           if (state is LoadingState) {
             return const Scaffold(
-              body: Center(child: CircularProgressIndicator()),
+              body: Center(child: CircularProgressIndicator(color: Colors.pink)),
             );
           } else if (state is ErrorState) {
             return Scaffold(
