@@ -5,7 +5,7 @@ class ProductModel {
   final double price;
   final String imageUrl;
   final String category;
-  final String brand;
+  final String? brand;
   final double rating;
   final int stock;
   final double discountPercentage;
@@ -39,7 +39,7 @@ class ProductModel {
       price: json['price'].toDouble(),
       imageUrl: json['thumbnail'],
       category: json['category'],
-      brand: json['brand'],
+      brand: json['brand'] as String?,
       rating: json['rating'].toDouble(),
       stock: json['stock'],
       discountPercentage: json['discountPercentage'].toDouble(),

@@ -99,11 +99,13 @@ class DetailsScreen extends StatelessWidget {
 
                     Padding(
                       padding: const EdgeInsets.only(top: 30),
-                      child: ProductDetailRow(
-                        label: "Brand",
-                        value: product.brand,
-                        valueFontStyle: FontStyle.italic,
-                      ),
+                      child: product.brand != null
+                          ? ProductDetailRow(
+                              label: "Brand",
+                              value: product.brand!,
+                              valueFontStyle: FontStyle.italic,
+                          )
+                          : const SizedBox()
                     ),
 
                     ProductDetailRow(
